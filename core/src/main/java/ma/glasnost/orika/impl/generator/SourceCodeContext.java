@@ -108,8 +108,8 @@ public class SourceCodeContext {
         this.propertyResolver = (PropertyResolverStrategy) mappingContext.getProperty(Properties.PROPERTY_RESOLVER_STRATEGY);
         this.filters = (Collection<Filter<Object, Object>>) mappingContext.getProperty(Properties.FILTERS);
         // fix bug
-        final Object property = mappingContext.getProperty(Properties.CAPTURE_FIELD_CONTEXT);
-        this.shouldCaptureFieldContext = Boolean.parseBoolean(property == null ? "" : property.toString());
+        final Object capture = mappingContext.getProperty(Properties.CAPTURE_FIELD_CONTEXT);
+        this.shouldCaptureFieldContext = Boolean.parseBoolean(capture == null ? "" : capture.toString());
 
         this.classSimpleName = baseClassName.replace("[]", "$Array");
         this.sourceBuilder = new StringBuilder();
